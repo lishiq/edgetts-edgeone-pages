@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>密码盒 · 隐私政策</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 40px 20px 80px;
+    line-height: 1.9; color: #181818; background: #fff; font-size: 15px;
+  }
+  h1 { font-size: 26px; margin-bottom: 6px; }
+  .meta { color: #6B6B6B; font-size: 13px; margin-bottom: 32px; }
+  h2 { font-size: 18px; margin: 34px 0 12px; padding-top: 8px; }
+  p, li { margin: 8px 0; }
+  ul { padding-left: 22px; }
+  .hl { background: #E8F0FE; padding: 16px 18px; border-radius: 12px; margin: 20px 0; }
+  .hl strong { color: #0A59F7; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid #E4E6E9; padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { background: #F7F9FA; font-weight: 600; }
+  footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid #E4E6E9; color: #6B6B6B; font-size: 13px; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #000; color: #F2F2F2; }
+    .meta, footer { color: #A8A8A8; }
+    .hl { background: #1D2B45; }
+    .hl strong { color: #5B9BFF; }
+    th, td { border-color: #2C2C2E; }
+    th { background: #1C1C1E; }
+    footer { border-color: #2C2C2E; }
+  }
+</style>
+</head>
+<body>
+
+<h1>密码盒 · 隐私政策</h1>
+<div class="meta">生效日期：2026 年 9 月 18 日 &nbsp;|&nbsp; 最近更新：2026 年 9 月 18 日</div>
+
+<div class="hl">
+  <strong>一句话说明：密码盒不联网、不收集、不上传任何数据。</strong><br>
+  你保存的所有内容只经过加密后存放在你自己的设备上，开发者无法访问，也无法获取。
+</div>
+
+<h2>1. 我们收集哪些信息</h2>
+<p><strong>不收集任何个人信息。</strong></p>
+<p>密码盒未申请网络访问权限，应用在技术上不具备向外部发送数据的能力。因此，我们无法收集、存储、传输或分析你的任何信息，包括但不限于：</p>
+<ul>
+  <li>你保存的账号、密码、卡号、证件号、笔记等内容</li>
+  <li>你的设备信息、位置信息、通讯录、相册</li>
+  <li>你的使用行为、操作记录、崩溃日志</li>
+</ul>
+
+<h2>2. 你的数据存放在哪里</h2>
+<p>全部存放在你的设备本地，且经过加密处理：</p>
+<ul>
+  <li><strong>数据库整体加密</strong>：应用使用系统提供的加密数据库存储数据，即使设备被他人获取，也无法直接读取数据库文件。</li>
+  <li><strong>敏感字段二次加密</strong>：密码、卡号等敏感内容会先经过 AES-256-GCM 算法加密后再写入数据库。</li>
+  <li><strong>密钥由你的主密码派生</strong>：加密密钥由你设置的主密码通过 PBKDF2 算法派生（迭代 10 万次），主密码本身不会被保存。</li>
+</ul>
+<p>卸载应用或在应用内使用「销毁全部数据」，本地数据即被清除。</p>
+
+<h2>3. 人脸识别与指纹的使用</h2>
+<p>密码盒使用系统提供的统一身份认证能力实现人脸/指纹解锁，遵循以下原则：</p>
+<ul>
+  <li>人脸与指纹信息由<strong>系统安全模块</strong>管理，<strong>不会经过本应用</strong>，我们无法获取你的生物特征数据；</li>
+  <li>应用仅接收系统返回的"认证是否通过"的结果；</li>
+  <li>用于生物识别解锁的密钥副本存放在系统的<strong>关键资产存储服务</strong>中，并受"需用户认证"访问控制保护；</li>
+  <li>你可以在应用设置中随时关闭「生物识别解锁」，关闭后该密钥副本会被立即删除。</li>
+</ul>
+
+<h2>4. 剪贴板的使用</h2>
+<p>当你点击复制按钮时，内容会被写入系统剪贴板，以便粘贴到其他应用。为降低泄露风险：</p>
+<ul>
+  <li>复制的内容被标记为<strong>仅本机剪贴板</strong>，不参与跨设备剪贴板同步；</li>
+  <li>按你的设置（默认 60 秒），应用会<strong>自动清空剪贴板</strong>；</li>
+  <li>应用仅在后台执行清空操作，不会读取剪贴板中的其他内容。</li>
+</ul>
+
+<h2>5. 备份文件的说明</h2>
+<p>你可以在设置中导出加密备份文件（<code>.mpbak</code>），该文件：</p>
+<ul>
+  <li>由你当前的主密码加密，加密强度与应用内一致；</li>
+  <li>由你自己选择保存位置，<strong>不经过网络、不上传至任何服务器</strong>；</li>
+  <li>请妥善保管——任何获得该文件并知晓主密码的人都能读取其中内容。</li>
+</ul>
+
+<h2>6. 应用申请的权限及用途</h2>
+<table>
+  <tr><th>权限</th><th>用途</th></tr>
+  <tr><td>生物识别（ACCESS_BIOMETRIC）</td><td>调用系统认证控件进行人脸/指纹解锁</td></tr>
+  <tr><td>隐私窗口（PRIVACY_WINDOW）</td><td>阻止截屏与录屏，避免密码被记录</td></tr>
+  <tr><td>持久化关键资产（STORE_PERSISTENT_DATA）</td><td>保存受认证保护的数据密钥副本</td></tr>
+  <tr><td>防窥状态（DLP_GET_HIDE_STATUS，受限权限）</td><td>检测屏幕被他人窥视时自动隐藏内容，设备不支持时该功能自动失效</td></tr>
+</table>
+<p><strong>本应用未申请任何网络权限。</strong></p>
+
+<h2>7. 第三方共享</h2>
+<p>不涉及。应用不集成任何第三方 SDK、统计组件或广告服务，不存在向第三方提供数据的情形。</p>
+
+<h2>8. 未成年人保护</h2>
+<p>本应用为本地工具，不收集任何用户信息，同样适用于未成年人。建议未成年人在监护人指导下使用，并妥善保管主密码。</p>
+
+<h2>9. 你的权利</h2>
+<ul>
+  <li><strong>查看与修改</strong>：你可以随时在应用内查看、修改、删除任意条目。</li>
+  <li><strong>导出</strong>：你可以导出加密备份，带走自己的全部数据。</li>
+  <li><strong>彻底删除</strong>：在「设置 → 销毁全部数据」中可一次性清空所有记录、分类与设置，该操作不可撤销。</li>
+</ul>
+
+<h2>10. 政策更新</h2>
+<p>若未来应用功能发生变化导致本政策需要调整，我们会在新版本发布时同步更新本页面，并标注更新日期。</p>
+
+<h2>11. 联系我们</h2>
+<p>如对本政策有任何疑问，可通过lishiqi@petalmail.com与我们联系。</p>
+
+<footer>
+  密码盒（HarmonyOS 版）· 本政策适用于该应用的全部版本。
+</footer>
+
+</body>
+</html>
